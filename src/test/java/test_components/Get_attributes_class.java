@@ -25,6 +25,7 @@ public class Get_attributes_class {
 	
 	public static void test_runner() {
 		for(String each_one: urls) {
+			System.out.println(" ");
 			Get_attributes_class.open_link(each_one);
 			System.out.println("URL: "+each_one);
 			Get_attributes_class.getTitle();
