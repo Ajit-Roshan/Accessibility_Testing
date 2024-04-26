@@ -150,7 +150,7 @@ public class Search_all_links extends Common_base {
 	}
 
 //	printing all the getched links
-	public static void print_all_data() {
+	public static Set<String> print_all_data() {
 
 		System.out.println("----- data -----");
 
@@ -159,6 +159,7 @@ public class Search_all_links extends Common_base {
 			System.out.println(index + " : " + ech);
 			index++;
 		}
+		return set_one;
 
 	}
 }

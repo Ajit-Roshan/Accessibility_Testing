@@ -1,5 +1,6 @@
 package test_components;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +15,29 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 public class Get_attributes_class {
 	
 	public static WebDriver dr;
-
+	public static Set<String> urls;
+	
+	public Get_attributes_class(WebDriver dr, Set<String> urls) {
+		// TODO Auto-generated constructor stub
+		this.dr= dr;
+		this.urls= urls;
+	}
+	
+	public static void test_runner() {
+		for(String each_one: urls) {
+			Get_attributes_class.open_link(each_one);
+			System.out.println("URL: "+each_one);
+			Get_attributes_class.getTitle();
+			Get_attributes_class.getHeader();
+			Get_attributes_class.get_metaDesc();
+			Get_attributes_class.get_pageLang();
+			Get_attributes_class.search_image_in_page();
+			Get_attributes_class.lookfor_input_elements();
+			Get_attributes_class.lookfor_table();
+			System.out.println(" ");
+		}
+	}
+	
 	public static void getURL(int count) {
 		String url = dr.getCurrentUrl();
 		System.out.println(count + " url: " + url);
@@ -173,10 +196,12 @@ public class Get_attributes_class {
 	}
 
 	public static void lookfor_table() {
-		List<WebElement> tables = dr.findElements(By.xpath("//table"));
+		List<WebElement> tables = dr.findElements(By.xpath("*//table"));
 //		System.out.println("Table: "+tables.size());
 		if (tables.size() != 0) {
-			System.out.println("table links: " + dr.getCurrentUrl());
+			System.out.println("table links: " +tables.size() );
+		}else {
+			System.out.println("table links: " +tables.size() );			
 		}
 	}
 
@@ -195,7 +220,11 @@ public class Get_attributes_class {
 		}
 
 	}
-
+	
+	public static void open_link(String link) {
+		dr.navigate().to(link);
+	}
+	
 	public static void open_new_window(String link) throws Throwable {
 		dr.switchTo().newWindow(WindowType.TAB);
 		dr.navigate().to(link);
@@ -242,10 +271,9 @@ public class Get_attributes_class {
 	
 	public static void lookfor_input_elements() {
 //		relative locator
-		By headerLocation= RelativeLocator.with(By.xpath("//input")).below(By.xpath("//div[@class='region region-header-top']"));		
+//		By headerLocation= RelativeLocator.with(By.xpath("//input")).below(By.xpath("//div[@class='region region-header-top']"));		
 		
-		
-		List<WebElement> inp= dr.findElements(headerLocation);
+		List<WebElement> inp= new ArrayList<WebElement>(dr.findElements(By.xpath("*//input")));
 		
 		if(inp.size()>0) {
 			System.out.println("inp: "+dr.getCurrentUrl());

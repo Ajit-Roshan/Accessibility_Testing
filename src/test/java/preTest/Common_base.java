@@ -2,10 +2,13 @@ package preTest;
 
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import test_components.Get_attributes_class;
 
 public class Common_base {
 
@@ -39,9 +42,13 @@ public class Common_base {
 		String should_have= pr.getProperty("url_to_use");
 		
 		Search_all_links call= new Search_all_links(dr, base_url, should_have);
-		
+
 		call.sharing_list();
-		call.print_all_data();
+		Set<String> urls= call.print_all_data();
+
+		Get_attributes_class attr= new Get_attributes_class(dr, urls);
+		System.out.println("starting the test");
+		attr.test_runner();
 		
 //		call.act_element();
 //		call.alrt();
