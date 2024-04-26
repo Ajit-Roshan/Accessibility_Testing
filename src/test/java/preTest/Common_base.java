@@ -22,23 +22,26 @@ public class Common_base {
 		
 		
 		
-		ChromeOptions opt= new ChromeOptions();
-		opt.setExperimentalOption("debuggerAddress", "localhost:9988");
+//		ChromeOptions opt= new ChromeOptions();
+//		opt.setExperimentalOption("debuggerAddress", "localhost:9988");
 //		opt.addArguments("--disable-notifications");
+//		WebDriver dr= new ChromeDriver(opt);
 
-		WebDriver dr= new ChromeDriver(opt);
 		
+		WebDriver dr= new ChromeDriver();
+		dr.manage().window().maximize();
 		
 		
 //		current project
 		
-		String base_url="";
+		String base_url=pr.getProperty("url_to_use");
 		
-		String should_have= "https://www.wbiwd.gov.in";
+		String should_have= pr.getProperty("url_to_use");
 		
 		Search_all_links call= new Search_all_links(dr, base_url, should_have);
 		
 		call.sharing_list();
+		call.print_all_data();
 		
 //		call.act_element();
 //		call.alrt();
