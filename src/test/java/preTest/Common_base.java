@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import test_components.Get_attributes_class;
+import test_components.Helper_axe;
 
 public class Common_base {
 
@@ -49,6 +50,9 @@ public class Common_base {
 		Get_attributes_class attr= new Get_attributes_class(dr, urls);
 		System.out.println("starting the test");
 		attr.test_runner();
+
+		
+
 		
 //		call.act_element();
 //		call.alrt();

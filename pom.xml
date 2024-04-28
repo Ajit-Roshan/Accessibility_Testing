@@ -1,10 +1,19 @@
-<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Access</groupId>
-  <artifactId>Access</artifactId>
-<version>0.0.1-SNAPSHOT</version>
-  
-  	<dependencies>
+<project xmlns="https://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Access</groupId>
+	<artifactId>Access</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.deque</groupId>
+			<artifactId>axe-selenium</artifactId>
+			<version>3.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -44,6 +53,14 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/com.deque.html.axe-core/selenium -->
+		<dependency>
+			<groupId>com.deque.html.axe-core</groupId>
+			<artifactId>selenium</artifactId>
+			<version>4.9.0</version>
+		</dependency>
+
+
 	</dependencies>
-  
+
 </project>

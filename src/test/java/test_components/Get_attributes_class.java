@@ -24,10 +24,12 @@ public class Get_attributes_class {
 	}
 	
 	public static void test_runner() {
+		
+		int i= 1;
 		for(String each_one: urls) {
 			System.out.println(" ");
 			Get_attributes_class.open_link(each_one);
-			System.out.println("URL: "+each_one);
+			System.out.println(i+": URL: "+each_one);
 			Get_attributes_class.getTitle();
 			Get_attributes_class.getHeader();
 			Get_attributes_class.get_metaDesc();
@@ -35,7 +37,13 @@ public class Get_attributes_class {
 			Get_attributes_class.search_image_in_page();
 			Get_attributes_class.lookfor_input_elements();
 			Get_attributes_class.lookfor_table();
+			
+//			axe_tool
+//			29-apr-add
+			Helper_axe.axe_helper(dr);
+			
 			System.out.println(" ");
+			i++;
 		}
 	}
 	
